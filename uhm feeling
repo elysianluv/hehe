@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for u, myluv</title>
+    <style>
+        body {
+            font-family:'Dancing Script', cursive;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            background-image: url('https://fastly.picsum.photos/id/65/4912/3264.jpg?hmac=uq0IxYtPIqRKinGruj45KcPPzxDjQvErcxyS1tn7bG0');
+            background-size: cover;
+            
+            
+        }
 
+        #myElement {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            border: 2px solid #c5317b;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #changeTextButton {
+            font-size: 1em;
+            padding: 10px 20px; 
+            border: none;
+            border-radius: 5px;
+            background-color: #131403;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #changeTextButton:hover {
+            background-color: #FFC0CB;
+        }
+    </style>
+</head>
+<body>
+    <div id="myElement">hey</div>
+    <button id="changeTextButton">press this</button>
+
+    <script>
+        function changeText() {
+            const element = document.getElementById('myElement');
+            const messages = [
+                'idk what to say',
+                'but',
+                'wtf',
+                'what is happening to me',
+                'i think',
+                'I',
+                'am bipolar',
+                'yesterday, i was so happy',
+                'but now,',
+                'i am depressed',
+                'k, bye',
+                'uhm, i just wanna say',
+                'i am feeling a lot of feelings',
+                'but i do not know what is it all',
+                'so please, bare with me;)',
+                'please be good to me.',
+                'please dont be hard on yourself'
+            ];
+
+            let currentIndex = 0;
+
+            document.getElementById('changeTextButton').addEventListener('click', () => {
+                if (currentIndex < messages.length) {
+                    element.textContent = messages[currentIndex];
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                    element.textContent = messages[currentIndex];
+                }
+            });
+        }
+
+        changeText();
+    </script>
+</body>
+</html>
+
+
+
+
+
+body{
+  padding: 25px;
+}
+.title {
+	color: #5C6AC4;
+}
+
+
+
+
+
+
+function showTime() {
+	document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+}
+showTime();
+setInterval(function () {
+	showTime();
+}, 1000);
